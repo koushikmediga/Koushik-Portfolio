@@ -7,7 +7,7 @@ window.addEventListener('load', function () {
 });
 
 // Portfolio Item Filter
-
+var filter;
 const filterContainer = document.querySelector('.portfolio-filter'),
   filterBtns = filterContainer.children,
   totalFilterBtn = filterBtns.length,
@@ -20,6 +20,7 @@ for (let i = 0; i < totalFilterBtn; i++) {
     this.classList.add('active');
 
     const filterValue = this.getAttribute('data-filter');
+    filter = filterValue;
     for (let k = 0; k < totalPortfolioItem; k++) {
       if (filterValue === portfolioItems[k].getAttribute('data-category')) {
         portfolioItems[k].classList.remove('hide');
@@ -34,7 +35,11 @@ for (let i = 0; i < totalFilterBtn; i++) {
       }
     }
   });
+ 
 }
+
+  if(filter=="Professional") document.getElementById("disclaimer-professional").style.display = 'block';
+   else document.getElementById("disclaimer-professional").style.display = 'none'
 
 
 // Aside Navbar
