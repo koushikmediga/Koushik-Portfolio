@@ -920,9 +920,9 @@ select {
   padding: 2px;
 }
 .portfolio .links :hover{
-   background-color: black;
-   color:white;
-   border: 3px solid yellow;
+   background-color: #2196f3;
+   color : #fff;
+   border: 3px solid #2196f3;
 }
 /* Contact Section */
 .contact .contact-info-item {
