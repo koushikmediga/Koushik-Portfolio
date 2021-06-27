@@ -21,6 +21,8 @@ for (let i = 0; i < totalFilterBtn; i++) {
 
     const filterValue = this.getAttribute('data-filter');
     filter = filterValue;
+    if(filter=="Professional") document.getElementById("disclaimer-professional").style.display = 'block';
+   else document.getElementById("disclaimer-professional").style.display = 'none'
     for (let k = 0; k < totalPortfolioItem; k++) {
       if (filterValue === portfolioItems[k].getAttribute('data-category')) {
         portfolioItems[k].classList.remove('hide');
@@ -38,8 +40,7 @@ for (let i = 0; i < totalFilterBtn; i++) {
  
 }
 
-  if(filter=="Professional") document.getElementById("disclaimer-professional").style.display = 'block';
-   else document.getElementById("disclaimer-professional").style.display = 'none'
+  
 
 
 // Aside Navbar

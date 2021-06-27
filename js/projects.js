@@ -241,17 +241,12 @@ function changeItem4() {
   lightboxImg.src = imgSrc;
 
   projectnumber = 4;
-  lightboxText.innerHTML = 'social media application'
+  lightboxText.innerHTML = "Avyantra Asha Application for data entry, and to view analysis of patient's data"
   lightboxCounter.innerHTML = itemIndex + 1 + ' of ' + totalProject4Items;
 
   if (itemIndex == 0) {
-    document.querySelector('.description').innerHTML = 'mern stack app';
+    document.querySelector('.description').innerHTML = 'React Native';
   }
-
-  if (itemIndex == 1) {
-    document.querySelector('.description').innerHTML = 'send and receive requests';
-  }
-
 
 
 }
