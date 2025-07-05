@@ -142,7 +142,8 @@
                   </div>
                   <div class="row">
                     <div class="buttons padd-15">
-                      <a href="./files/Koushik-Resume-2023.pdf" download="koushik_resume" target="blank" class="btn">Download
+                      <a href="./files/Koushik-Resume-2023.pdf" download="koushik_resume" target="blank"
+                        class="btn">Download
                         CV</a>
                       <a href="#contact" data-section-index="1" class="btn hire-me">Hire Me</a>
                     </div>
@@ -526,14 +527,20 @@
                   </div>
 
                   <div class="portfolio-info">
-                    <p class="portfolio-description">
                     <h4 class="portfolio-title">Health Insurance Portal | ReactJS, NodeJS, MySQL</h4>
-                    Developed a comprehensive health insurance management system for insurance providers.
-                    Features include policy management, claims processing, customer portal, and admin dashboard.
-                    Built with ReactJS frontend, NodeJS backend, and MySQL database for robust data management.<br>
-                    Implemented a microservices architecture for all portals, ensuring scalability, maintainability, and independent deployment of each module.
+                    <p class="portfolio-description">
+                      Developed a comprehensive health insurance management system for insurance providers.
+                      Features include policy management, claims processing, customer portal, and admin dashboard.
                     </p>
-
+                    <a href="#" class="view-more-link"
+                      data-title="Health Insurance Portal | ReactJS, NodeJS, MySQL"
+                      data-images='["./images/portfolio/ilumina.png", "./images/portfolio/decision-engine.jpg"]'
+                      data-description="Developed a comprehensive health insurance management system for insurance providers.
+                       Features include policy management, claims processing, customer portal, and admin dashboard. Implemented a microservices architecture for all portals, ensuring scalability, maintainability, and independent deployment of each module. 
+                       This portal includes onboarding, doctor coordination, lab services, claims reimbursement, finance management, common inquiry, business admin, and system admin modules. 
+                       Each module is implemented as a microservice for scalability and maintainability.">
+                      View More
+                    </a>
                   </div>
 
                 </div>
@@ -553,7 +560,8 @@
                     <h4 class="portfolio-title">Fintech Lending Application | ReactJS, NodeJS, PostgresQL</h4>
                     Built a digital lending platform for financial institutions to streamline loan processing.
                     Implemented features like loan application management, credit scoring, document verification,
-                    and payment tracking. Utilized ReactJS for responsive UI, NodeJS for backend APIs, and PostgresQL for
+                    and payment tracking. Utilized ReactJS for responsive UI, NodeJS for backend APIs, and PostgresQL
+                    for
                     secure financial data storage.
                     </p>
 
@@ -1032,14 +1040,27 @@
   </div>
   <!-- Live Style Switcher - Demo Only End-->
 
-  <!-- Template js -->
+  <!-- Modal HTML -->
+  <div id="project-modal" class="project-modal-overlay" style="display:none;">
+    <div class="project-modal">
+      <div id="project-modal-title" class="project-modal-title" style="font-size:1.2rem;font-weight:700;margin:20px 0 10px 0;"></div>
+      <span class="project-modal-close">&times;</span>
+      <div class="project-modal-image-container">
+        <img id="project-modal-image" src="" alt="Project Image" />
+        <span class="project-modal-arrow project-modal-arrow-left" style="display:none;">&#8592;</span>
+        <span class="project-modal-arrow project-modal-arrow-right" style="display:none;">&#8594;</span>
+      </div>
+      <div class="project-modal-description-container">
+        <div id="project-modal-description"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Place ALL scripts here, after the modal HTML -->
   <script src="./js/script.js"></script>
   <script src="./js/projects.js"></script>
   <script src="./js/mail.js"></script>
-  <!-- Live Style js - Demo Only -->
   <script src="./js/styleSwitcher.js"></script>
-
-
 </body>
 
 </html>

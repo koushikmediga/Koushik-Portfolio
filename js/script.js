@@ -125,8 +125,87 @@ function asideSectionTogglerBtn() {
   }
 }
 
-
-
 /////////////////////////////////////////////////
+
+// Project Modal Logic
+(function() {
+  const modal = document.getElementById('project-modal');
+  const modalImg = document.getElementById('project-modal-image');
+  const modalDesc = document.getElementById('project-modal-description');
+  const closeBtn = document.querySelector('.project-modal-close');
+  const arrowLeft = document.querySelector('.project-modal-arrow-left');
+  const arrowRight = document.querySelector('.project-modal-arrow-right');
+  const modalTitle = document.getElementById('project-modal-title');
+  let images = [];
+  let currentIndex = 0;
+
+  function openModal(imgArr, desc, title) {
+    images = imgArr;
+    currentIndex = 0;
+    modalImg.src = images[0];
+    modalDesc.textContent = desc;
+    modalTitle.textContent = title || '';
+    modal.style.display = 'flex';
+    updateArrows();
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    images = [];
+    currentIndex = 0;
+    modalImg.src = '';
+    modalDesc.textContent = '';
+  }
+
+  function updateArrows() {
+    if (images.length > 1) {
+      arrowLeft.style.display = currentIndex > 0 ? 'flex' : 'none';
+      arrowRight.style.display = currentIndex < images.length - 1 ? 'flex' : 'none';
+    } else {
+      arrowLeft.style.display = 'none';
+      arrowRight.style.display = 'none';
+    }
+  }
+
+  function showImage(idx) {
+    if (idx >= 0 && idx < images.length) {
+      currentIndex = idx;
+      modalImg.src = images[currentIndex];
+      updateArrows();
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('view-more-link')) {
+      console.log('View More clicked!');
+      e.preventDefault();
+      const imgs = JSON.parse(e.target.getAttribute('data-images'));
+      const desc = e.target.getAttribute('data-description');
+      const title = e.target.getAttribute('data-title');
+      openModal(imgs, desc, title);
+    }
+    if (e.target === modal) {
+      console.log('Modal overlay clicked, closing modal');
+      closeModal();
+    }
+    if (e.target.classList.contains('project-modal-close')) {
+      console.log('Close button clicked, closing modal');
+      closeModal();
+    }
+    if (e.target.classList.contains('project-modal-arrow-left')) {
+      console.log('Left arrow clicked, currentIndex:', currentIndex);
+      showImage(currentIndex - 1);
+    }
+    if (e.target.classList.contains('project-modal-arrow-right')) {
+      console.log('Right arrow clicked, currentIndex:', currentIndex);
+      showImage(currentIndex + 1);
+    }
+  });
+
+  // Prevent modal click from closing when clicking inside modal
+  document.querySelector('.project-modal').addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+})();
 
 
